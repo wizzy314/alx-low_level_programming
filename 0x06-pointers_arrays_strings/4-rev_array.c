@@ -1,21 +1,20 @@
-#include <stdio.h>
-#include "holberton.h"
+#include "main.h"
+
 /**
- * _strcat - function that print a string overwriting a string
- * @src: int
- * @dest: int
- *
+ * reverse_array - reverses an array of integers
+ * @a: array to be reversed
+ * @n: number of elements in the array
  */
 void reverse_array(int *a, int n)
 {
-	int i;
-	int j;
-	int aux;
+	int i, j, tmp;
 
-	for (i = 0, j = n - 1; i < n / 2; j--, i++)
+	j = n - 1;
+
+	for (i = 0; i < n / 2; i++)
 	{
-		aux = a[i];
+		tmp = a[i];
 		a[i] = a[j];
-		a[j] = aux;
+		a[j--] = tmp;
 	}
 }

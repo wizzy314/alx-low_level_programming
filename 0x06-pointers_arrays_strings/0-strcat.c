@@ -1,26 +1,30 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
- * _strcat - Entry point.
- * @dest: Variable which will hold the string.
- * @src: Variable which holds the string.
+ * _strcat - concatenates two strings
+ * @dest: string to append to
+ * @src: string to add
  *
- * Return: 0.
+ * Return: a pointer to the resulting string
  */
 char *_strcat(char *dest, char *src)
 {
-	char *aux = dest;
+	int i, j;
 
-	while (*dest != '\0')
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
+		i++;
+
+	while (src[j] != '\0')
 	{
-		dest++;
+		dest[i] = src[j];
+		j++;
+		i++;
 	}
 
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (aux);
+	dest[i] = '\0';
+
+	return (dest);
 }

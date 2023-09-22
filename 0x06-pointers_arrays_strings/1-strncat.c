@@ -1,32 +1,31 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
- * _strcat - Entry point.
- * @dest: Variable which will hold the string.
- * @src: Variable which holds the string.
- *@n: int
- * Return: dest.
+ * _strncat - concatenates n bytes from a string to another
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes of str to concatenate
+ *
+ * Return: a pointer to the resulting string dest
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	/*Declare and init vars*/
-	int i;
-	char *destPointer = dest;
-	int len = 0;
-	if (dest == 0)
+	int i, j;
+
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
+		i++;
+
+	while (src[j] != '\0' && j < n)
 	{
-		return (0);
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	/*Lenght of string dest*/
-	while (*dest)
-	{
-		len++;
-		dest++;
-	}
-	dest = destPointer;
-	for (i = 0; i < n && src[i]; i++)
-	{
-		dest[len + i] = src[i];
-	}
-	dest[len + i] = '\0';
+
+	dest[i] = '\0';
+
 	return (dest);
 }
