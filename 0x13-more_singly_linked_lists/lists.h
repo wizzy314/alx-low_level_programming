@@ -18,8 +18,8 @@
 
 typedef struct listint_s
 {
-    int n;
-    struct listint_s *next;
+	int n;
+	struct listint_s *next;
 } listint_t;
 
 int _putchar(char c);
@@ -39,4 +39,4 @@ size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
 
-#endif	/* 	_LISTS_H_ */
+#endif	/*	_LISTS_H_ */
